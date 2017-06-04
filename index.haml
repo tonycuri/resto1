@@ -6,6 +6,7 @@
     %meta{name:"description",content:"Come rico y barato en el mejor restaurante de la ciudad, servicio de primera."}
     %meta{name:"viewport",content:"width=device-width, initial-scale=1"}
     %link{rel:"stylesheet", href:"css/normalize.css"}
+    %link{rel:"stylesheet", href:"css/bootstrap.css"}
     %link{rel:"stylesheet", href:"css/flexboxgrid.min.css"}
     %link{rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Dancing+Script" }
     %link{rel:"stylesheet", href:"css/style.css"}
@@ -22,23 +23,31 @@
     ="<![endif]-->"
     .video-container
       %video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/videos/images/bbq.jpg"}
-        %source{src:"videos/mp4/bbq.mp4",typ:"video/mp4"}
-        %source{src:"videos/webm/bbq.webm",typ:"video/webm"}
+        %source{src:"/videos/mp4/bbq.mp4",typ:"video/mp4"}
+        %source{src:"/videos/webm/bbq.webm",typ:"video/webm"}
     .row.full-height.middle-xs.center-xs.relative.up
       .col-xs-12
-<<<<<<< HEAD
         .box.white-text
-          %img{src:"imgs/logo.png",width:200}
+          %img{src:"/imgs/logo.png",width:200}
           %h1.white-text.dancing-script.title.no-margin Restaurante Facilito
-          %p#is-open Abierto ahora
-      %nav.fixed#navigation.top.right.white-text
-        %ul
-          %li Inicio
-          %li Menú
-          %li Galeria
-          %li Contacto
-          %li Cómo llegar
-=======
-        .box
-          %h1.white-text.dancing-script.title Restaurante Facilito
->>>>>>> parent of 7c6d2f3... agregamos el logo
+          %p#is-open
+            %i.glyphicon.glyphicon-time
+            Abierto ahora
+      %nav.fixed#navigation.top.right.white-text.navigation
+        -menu = ["Inicio","Menú","Galería","Contacto","Cómo llegar"]
+        %ul.list-inline
+          -menu.each do |item|
+            %li
+              %a{}= item
+      .absolute.black.large-padding.bottom.white-text.full-width#description
+        .row.middle-xs
+          .col-xs-7.col-sm-6.white-text.medium
+            Atención cálida y comida preparada por artistas
+          .col-xs
+            .box
+              %nav.text-right.navigation
+                %ul.list-inline
+                  -menu.each do |item|
+                    %li
+                      %a{}= item
+    .full-height
