@@ -40,10 +40,10 @@
             %li
               %a{}= item
       .absolute.black.large-padding.bottom.white-text.full-width#description
-        .row.middle-xs
+        .row.middle-xs.center-xs
           .col-xs-7.col-sm-6.white-text.medium
             Atención cálida y comida preparada por artistas
-          .col-xs
+          .col-xs.hidden
             .box
               %nav.text-right.navigation
                 %ul.list-inline
@@ -51,3 +51,7 @@
                     %li
                       %a{}= item
     .full-height
+
+    %script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}
+    %script
+      window.jQuery || document.write("<script src="/js/vendor/jquery-1.12.0.min.js"></script>")

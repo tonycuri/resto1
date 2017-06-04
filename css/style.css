@@ -96,14 +96,45 @@ textarea {
     width: auto;
     height: auto; }
 
+.navigation li {
+  padding: 5px 10px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s; }
+  .navigation li:hover {
+    background-color: rgba(0, 0, 0, 0.4); }
+  .navigation li a {
+    color: white;
+    cursor: pointer; }
+    .navigation li a:hover {
+      text-decoration: none; }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+.white-text {
+  color: white; }
+
+.black {
+  background-color: #222; }
+
 .dancing-script {
   font-family: 'Dancing Script', cursive; }
 
+.title {
+  font-size: 4em; }
+
+.medium, .navigation li {
+  font-size: 1.5em; }
+
+.large-padding {
+  padding: 10px 15px; }
+
 .full-height {
   height: 100%; }
+
+.full-width {
+  width: 100%; }
 
 .fixed {
   position: fixed; }
@@ -114,6 +145,9 @@ textarea {
 .up {
   z-index: 5; }
 
+.absolute {
+  position: absolute; }
+
 .relative {
   position: relative; }
 
@@ -123,14 +157,11 @@ textarea {
 .right {
   right: 5em; }
 
-.title {
-  font-size: 4em; }
-
 .top {
-  top: 1em; }
+  top: 3em; }
 
-.white-text {
-  color: white; }
+.bottom {
+  bottom: 0px; }
 
 /*
  * Hide visually and from screen readers

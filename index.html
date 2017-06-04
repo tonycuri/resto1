@@ -6,6 +6,7 @@
     <meta content="Come rico y barato en el mejor restaurante de la ciudad, servicio de primera." name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/flexboxgrid.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -33,18 +34,66 @@
         <div class="box white-text">
           <img src="/imgs/logo.png" width="200">
           <h1 class="white-text dancing-script title no-margin">Restaurante Facilito</h1>
-          <p id="is-open">Abierto ahora</p>
+          <p id="is-open">
+            <i class="glyphicon glyphicon-time"></i>
+            Abierto ahora
+          </p>
         </div>
       </div>
-      <nav class="fixed top right white-text" id="navigation">
-        <ul>
-          <li>Inicio</li>
-          <li>Menú</li>
-          <li>Galeria</li>
-          <li>Contacto</li>
-          <li>Cómo llegar</li>
+      <nav class="fixed top right white-text navigation" id="navigation">
+        <ul class="list-inline">
+          <li>
+            <a>Inicio</a>
+          </li>
+          <li>
+            <a>Menú</a>
+          </li>
+          <li>
+            <a>Galería</a>
+          </li>
+          <li>
+            <a>Contacto</a>
+          </li>
+          <li>
+            <a>Cómo llegar</a>
+          </li>
         </ul>
       </nav>
+      <div class="absolute black large-padding bottom white-text full-width" id="description">
+        <div class="row middle-xs center-xs">
+          <div class="col-xs-7 col-sm-6 white-text medium">
+            Atención cálida y comida preparada por artistas
+          </div>
+          <div class="col-xs hidden">
+            <div class="box">
+              <nav class="text-right navigation">
+                <ul class="list-inline">
+                  <li>
+                    <a>Inicio</a>
+                  </li>
+                  <li>
+                    <a>Menú</a>
+                  </li>
+                  <li>
+                    <a>Galería</a>
+                  </li>
+                  <li>
+                    <a>Contacto</a>
+                  </li>
+                  <li>
+                    <a>Cómo llegar</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="full-height"></div>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      window.jQuery || document.write("<script src="/js/vendor/jquery-1.12.0.min.js"></script>")
+    </script>
   </body>
 </html>
