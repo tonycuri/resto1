@@ -1,0 +1,30 @@
+!!!5
+%html{class:"no-js",lang:"es"}
+  %head
+    %meta{charset:"uft-8"}
+    %title La mejor comida en Restaurante Web
+    %meta{name:"description",content:"Come rico y barato en el mejor restaurante de la ciudad, servicio de primera."}
+    %meta{name:"viewport",content:"width=device-width, initial-scale=1"}
+    %link{rel:"stylesheet", href:"css/normalize.css"}
+    %link{rel:"stylesheet", href:"css/flexboxgrid.min.css"}
+    %link{rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Dancing+Script" }
+    %link{rel:"stylesheet", href:"css/style.css"}
+    %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+  %body
+    ="<!--[if lt IE 8]>"
+    %p{class:"browserupgrade"}
+      Estás usando un navegador
+      %strong desactualizado.
+      Por favor
+      %a{href:"http://browsehappy.com/"}
+      actualiza tu navegador
+      para una mejor experiencia
+    ="<![endif]-->"
+    .video-container
+      %video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/videos/images/bbq.jpg"}
+        %source{src:"/videos/mp4/bbq.mp4",typ:"video/mp4"}
+        %source{src:"/videos/webm/bbq.webm",typ:"video/webm"}
+    .row.full-height.middle-xs.center-xs.relative.up
+      .col-xs-12
+        .box
+          %h1.white-text.dancing-script.title Restaurante Facilito
