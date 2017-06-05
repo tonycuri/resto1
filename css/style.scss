@@ -127,7 +127,43 @@ textarea {
     }
   }
 }
-
+#description{
+  ul{
+    margin: 0;
+  }
+  &.absolute{
+    bottom:0px;
+  }
+  &.fixed{
+    top:0px;
+  }
+}
+.food{
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  overflow: hidden;
+  &:hover{
+    .screen{
+      top:0%;
+    }
+  }
+  .screen{
+    position:relative;
+    background-color: rgba(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+    top:-100%;
+    transition: top 0.4s;
+  }
+}
+#menu-title{
+  width: 300px;
+  z-index:5;
+  left: calc(50% - 150px);
+  top: calc(50% - 2.5em);
+}
 
 
 
@@ -146,6 +182,9 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+.white{
+  background-color: white;
+}
 .white-text{
    color:white;
 }
@@ -160,6 +199,9 @@ textarea {
 }
 .medium{
   font-size: 1.5em;
+}
+.subtitle{
+  font-size: 2.5em;
 }
 .large-padding{
   padding: 10px 15px;
@@ -202,7 +244,7 @@ textarea {
  */
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 /*
