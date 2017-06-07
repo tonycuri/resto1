@@ -1,3 +1,4 @@
+-gallery_images = ["club-sandwich.jpg","papas.jpg","hamburger.jpg","panini.jpg","hot-cakes.jpg","combo.jpg"]
 !!!5
 %html{class:"no-js",lang:"es"}
   %head
@@ -5,6 +6,7 @@
     %title La mejor comida en Restaurante Web
     %meta{name:"description",content:"Come rico y barato en el mejor restaurante de la ciudad, servicio de primera."}
     %meta{name:"viewport",content:"width=device-width, initial-scale=1"}
+    %meta{:"data-name"=> "image-counter",content:"#{gallery_images.size - 1}"}
     %link{rel:"stylesheet", href:"css/normalize.css"}
     %link{rel:"stylesheet", href:"css/bootstrap.css"}
     %link{rel:"stylesheet", href:"css/flexboxgrid.min.css"}
@@ -70,6 +72,20 @@
                 .col-xs-12.white-text
                   %h3.dancing-script.subtitle= photo[:name]
                   %p.no-margin=photo[:pricing]+ " USD"
+    #gallery
+      .inner
+        -gallery_images.each do |image|
+          .image{style:"background-image:url(/imgs/food/#{image})"}
+    .container
+      .card.white.black-text.text-center.relative
+        %h3.medium.slim
+          En
+          %strong.dancing-script.medium RestauranteFacilito
+          cocinar no es una profesión, no es una técnica, es un
+          %strong.dancing-script.medium arte
+        %p.top-space
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          %strong.dancing-script.medium Tony -chef
 
     %script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}
     %script
