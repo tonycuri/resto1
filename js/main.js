@@ -4,7 +4,15 @@
   let currentPosition = 0
 
   const imageCounter = $("[data-name = 'image-counter']").attr("content")
-  console.log(imageCounter)
+  const email = "curicaballero@gmail.com"
+
+  $("#contact-form").on("submit",function(ev){
+    ev.preventDefault()
+
+    sendForm($(this))
+
+    return false;
+  })
 
   $("#sticky-navigation").removeClass("hidden")
   $("#sticky-navigation").slideUp(0)
@@ -45,6 +53,18 @@
     $("#description").removeClass("fixed").addClass("absolute")
     $("#navigation").slideDown("fast")
     $("#sticky-navigation").slideUp("fast")
+  }
+
+  function sendForm($form){
+    $.ajax({
+      url: $form.attr("action"),
+      method: "POST",
+      data: $form.formObject(),
+      dataType: "json",
+      success: function(){
+        alert("Todo salio bien")
+      }
+    })
   }
 
   function isInBottom(){

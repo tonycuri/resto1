@@ -1,0 +1,1 @@
+"use strict";!function(){$("#contact-form").find(".input").on("change",function(){console.log("cambie de valor")})}();
