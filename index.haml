@@ -91,15 +91,21 @@
       .row.middle-xs.full-height
         .col-xs-12
           .box
-            %form{action:"https://formspree.io/curicaballero@gmail.com",method:"POST",id:"contact-form"}
+            %form{action:"https://formspree.io/curicaballero@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
               .row.center-xs
-                .col-xs-2.col-md-1
+                .col-xs-2.col-md-1.text-center
                   .box
+                    -3.times do |i|
+                      .path-step
+                      %br
                 .col-xs-5
                   .box
-                    %input{type:"email",name:"email",placeholder:"Coloca tu correo electronico",class:"input"}
-                    %input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input"}
-                    %textarea{type:"body",name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input"}
+                    %fieldset.step.active
+                      %input{type:"email",name:"email",placeholder:"Coloca tu correo electronico",class:"input",required:"true"}
+                    %fieldset.step
+                      %input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input",required:"true"}
+                    %fieldset.step
+                      %textarea{type:"body",name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input",required:"true"}
                     %div
                       %button{type:"submit",class:"btn"}
                         Enviar
