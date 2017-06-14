@@ -3,6 +3,10 @@
   // $(".step:nth-child(1)").addClass("active")
   const selector = "#contact-form"
 
+  $(".path-step").on("click",(ev)=>{
+
+  })
+
   //agarra el formulario y mete los metodos de jquery
   $(selector).find(".input").on("change",(ev)=>{
     let $input = $(ev.target)
