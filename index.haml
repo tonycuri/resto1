@@ -91,28 +91,36 @@
       .row.middle-xs.full-height
         .col-xs-12
           .box
+            %p.text-center.medium#info-contacto Presiona enter para llenar el campo correspondiente y enviarnos un correo.
             %form{action:"https://formspree.io/curicaballero@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
               .row.center-xs
                 .col-xs-2.col-md-1.text-center
                   .box
                     -3.times do |i|
-                      .path-step
+                      -if i == 0
+                        .path-step.active
+                      -else
+                        .path-step
                       %br
                 .col-xs-5
                   .box
                     %fieldset.step.active
-                      %input{type:"email",name:"email",placeholder:"Coloca tu correo electronico",class:"input",required:"true"}
+                      %input{type:"email",name:"email",placeholder:"Tu correo electrónico",class:"input",required:"true"}
                     %fieldset.step
-                      %input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input",required:"true"}
+                      %input{type:"text",name:"name",placeholder:"Tu nombre",class:"input",required:"true"}
                     %fieldset.step
-                      %textarea{type:"body",name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input",required:"true"}
-                    %div
-                      %button{type:"submit",class:"btn"}
-                        Enviar
+                      %textarea{type:"body",name:"body",placeholder:"Tu mensaje...",class:"input",required:"true"}
+    #location
+      #map
+      #message.black.large-padding.white-text.text-center.medium
+        prueba
+
 
     %script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}
     %script
       window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>");
-    %script{src:"/js/form_object.js"}
-    %script{src:"/js/main.js"}
+    %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyBPNHaEIQabIFBDWl9pshUI3y__0wCTKhg"}
+    %script{src:"/dist/maps.js"}
+    %script{src:"/dist/form_object.js"}
+    %script{src:"/dist/main.js"}
     %script{src:"/dist/steps.js"}

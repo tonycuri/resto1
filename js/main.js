@@ -55,17 +55,6 @@
     $("#sticky-navigation").slideUp("fast")
   }
 
-  function sendForm($form){
-    $.ajax({
-      url: $form.attr("action"),
-      method: "POST",
-      data: $form.formObject(),
-      dataType: "json",
-      success: function(){
-        alert("Todo salio bien")
-      }
-    })
-  }
 
   function isInBottom(){
     const $description = $("#description")
