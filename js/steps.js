@@ -82,6 +82,7 @@
         $form.slideUp()
         $("#info-contacto").html("Enviamos tu mensaje, pronto nos pondremos en contacto")
       }
+      
     })
   }
 
