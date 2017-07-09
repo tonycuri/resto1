@@ -25,33 +25,34 @@
     ="<![endif]-->"
     .video-container
       %video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/videos/images/bbq.jpg"}
-        %source{src:"/videos/mp4/bbq.mp4",typ:"video/mp4"}
-        %source{src:"/videos/webm/bbq.webm",typ:"video/webm"}
+        %source{src:"videos/mp4/bbq.mp4",typ:"video/mp4"}
+        %source{src:"videos/webm/bbq.webm",typ:"video/webm"}
     .row.full-height.middle-xs.center-xs.relative.up#home
       .col-xs-12
         .box.white-text
-          %img{src:"/imgs/logo.png",width:200}
+          %img{src:"imgs/logo.png",width:200}
           %h1.white-text.dancing-script.title.no-margin Restaurante Facilito
           %p#is-open
             %i.glyphicon.glyphicon-time
-            Abierto ahora
+            %span.text Abierto ahora
       %nav.fixed#navigation.top.right.white-text.navigation
-        -menu = ["Inicio","Menú","Galería","Contacto","Cómo llegar"]
+        -menu = [{title:"Home",link:"#home"},{title:"Menú",link:"#menu"},{title:"Galería",link:"#gallery"},{title:"Contacto",link:"#contact"},{title:"Cómo llegar",link:"#location"}]
         %ul.list-inline
           -menu.each do |item|
             %li
-              %a{}= item
+              %a{href:item[:link]}= item[:title]
       .absolute.black.large-padding.white-text.full-width#description
         .row.middle-xs.center-xs
           .col-xs-7.col-sm-6.white-text.medium
             Atención cálida y comida preparada por artistas
           .col-xs.hidden#sticky-navigation
             .box
-              %nav.text-right.navigation
+              %nav.text-right.navigation#responsive-nav
+                %i.glyphicon.glyphicon-menu-hamburger.white-text.subtitle#menu-opener.glyphicon.glyphicon-remove
                 %ul.list-inline
                   -menu.each do |item|
                     %li
-                      %a{}= item
+                      %a.menu-link{href:item[:link]}= item[:title]
 
     .text-center.relative#menu
       .absolute.white#menu-title
@@ -66,7 +67,7 @@
                     {name:"Hamburgueza", image:"hamburger",pricing:"20.00"}]
       .row
         -menu_photos.each do |photo|
-          .col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(/imgs/food/#{photo[:image]}-thumb.jpg)"}
+          .col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
             .screen
               .row.middle-xs.full-height
                 .col-xs-12.white-text
@@ -75,7 +76,7 @@
     #gallery
       .inner
         -gallery_images.each do |image|
-          .image{style:"background-image:url(/imgs/food/#{image})"}
+          .image{style:"background-image:url(imgs/food/#{image})"}
     .container
       .card.white.black-text.text-center.relative
         %h3.medium.slim
@@ -94,15 +95,14 @@
             %p.text-center.medium#info-contacto Presiona enter para llenar el campo correspondiente y enviarnos un correo.
             %form{action:"https://formspree.io/curicaballero@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
               .row.center-xs
-                .col-xs-2.col-md-1.text-center
+                .col-xs-12.-col-sm-2.col-md-1.first-md
                   .box
                     -3.times do |i|
                       -if i == 0
                         .path-step.active
                       -else
                         .path-step
-                      %br
-                .col-xs-5
+                .col-xs-12.col-sm-3.first-xs
                   .box
                     %fieldset.step.active
                       %input{type:"email",name:"email",placeholder:"Tu correo electrónico",class:"input",required:"true"}
@@ -120,7 +120,5 @@
     %script
       window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>");
     %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyBPNHaEIQabIFBDWl9pshUI3y__0wCTKhg"}
-    %script{src:"/dist/maps.js"}
-    %script{src:"/dist/form_object.js"}
-    %script{src:"/dist/main.js"}
-    %script{src:"/dist/steps.js"}
+    %script{src:"/dist/app.js"}
+    

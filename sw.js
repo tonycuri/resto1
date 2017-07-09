@@ -17,11 +17,13 @@ self.addEventListener("fetch",function(ev){
     caches.match(ev.request)
           .then(function(response){
             if(response){
-              console.log("Estoy en el cache")
               return response;
             }
-            console.log("no estoy en el cache")
             return fetch(ev.request)
+          }).catch(function(error){
+            if(ev.request.mode == "navigate"){
+              return cache.match("/offline/view.html")
+            }
           })
   )
 })

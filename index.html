@@ -37,26 +37,26 @@
           <h1 class="white-text dancing-script title no-margin">Restaurante Facilito</h1>
           <p id="is-open">
             <i class="glyphicon glyphicon-time"></i>
-            Abierto ahora
+            <span class="text">Abierto ahora</span>
           </p>
         </div>
       </div>
       <nav class="fixed top right white-text navigation" id="navigation">
         <ul class="list-inline">
           <li>
-            <a>Inicio</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a>Menú</a>
+            <a href="#menu">Menú</a>
           </li>
           <li>
-            <a>Galería</a>
+            <a href="#gallery">Galería</a>
           </li>
           <li>
-            <a>Contacto</a>
+            <a href="#contact">Contacto</a>
           </li>
           <li>
-            <a>Cómo llegar</a>
+            <a href="#location">Cómo llegar</a>
           </li>
         </ul>
       </nav>
@@ -67,22 +67,23 @@
           </div>
           <div class="col-xs hidden" id="sticky-navigation">
             <div class="box">
-              <nav class="text-right navigation">
+              <nav class="text-right navigation" id="responsive-nav">
+                <i class="glyphicon glyphicon-menu-hamburger white-text subtitle glyphicon glyphicon-remove" id="menu-opener"></i>
                 <ul class="list-inline">
                   <li>
-                    <a>Inicio</a>
+                    <a class="menu-link" href="#home">Home</a>
                   </li>
                   <li>
-                    <a>Menú</a>
+                    <a class="menu-link" href="#menu">Menú</a>
                   </li>
                   <li>
-                    <a>Galería</a>
+                    <a class="menu-link" href="#gallery">Galería</a>
                   </li>
                   <li>
-                    <a>Contacto</a>
+                    <a class="menu-link" href="#contact">Contacto</a>
                   </li>
                   <li>
-                    <a>Cómo llegar</a>
+                    <a class="menu-link" href="#location">Cómo llegar</a>
                   </li>
                 </ul>
               </nav>
@@ -209,17 +210,14 @@
             <p class="text-center medium" id="info-contacto">Presiona enter para llenar el campo correspondiente y enviarnos un correo.</p>
             <form action="https://formspree.io/curicaballero@gmail.com" class="step-form" id="contact-form" method="POST">
               <div class="row center-xs">
-                <div class="col-xs-2 col-md-1 text-center">
+                <div class="col-xs-12 -col-sm-2 col-md-1 first-md">
                   <div class="box">
                     <div class="path-step active"></div>
-                    <br>
                     <div class="path-step"></div>
-                    <br>
                     <div class="path-step"></div>
-                    <br>
                   </div>
                 </div>
-                <div class="col-xs-5">
+                <div class="col-xs-12 col-sm-3 first-xs">
                   <div class="box">
                     <fieldset class="step active">
                       <input class="input" name="email" placeholder="Tu correo electrónico" required="true" type="email">
@@ -249,9 +247,6 @@
       window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>");
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPNHaEIQabIFBDWl9pshUI3y__0wCTKhg"></script>
-    <script src="/dist/maps.js"></script>
-    <script src="/dist/form_object.js"></script>
-    <script src="/dist/main.js"></script>
-    <script src="/dist/steps.js"></script>
+    <script src="/dist/app.js"></script>
   </body>
 </html>

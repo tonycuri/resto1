@@ -160,7 +160,7 @@ textarea {
 }
 #menu-title{
   width: 300px;
-  z-index:5;
+  z-index:4;
   left: calc(50% - 150px);
   top: calc(50% - 2.5em);
 }
@@ -199,7 +199,7 @@ textarea {
   background-color: #a2a2a2;
   margin-top: 2em;
   opacity: 0.4s;
-  display:inline-block;
+  display:block;
   transition: all 0.4s;
   cursor:pointer;
   &:hover{
@@ -240,6 +240,10 @@ textarea {
 }
 #map{
   height: 500px;
+}
+
+#menu-opener{
+  display:none;
 }
 
 /* ==========================================================================
@@ -402,6 +406,51 @@ textarea {
     /* Style adjustments for viewports that meet the condition */
 }
 
+@media only screen and (max-height:600px){
+  #contact,.container .card{margin-top:-15%;}
+  
+}
+@media only screen and (max-width: 960px){
+  #navigation{
+    display:none !important;
+  }
+  #menu-opener{
+    display:block;
+  }
+  .path-step{
+    display: inline-block;
+    margin-right: 1em;
+  }
+  #responsive-nav{
+    ul{
+      position:absolute;
+      width: 100%;
+      font-size: 1.5em;
+      top:80px;
+      background-color: #222;
+      left:0px;
+      text-align: center;
+      max-height: 0px;
+      overflow: hidden;
+      transition: all 0.4s;
+      &.active{
+        max-height: 80vh;
+      }
+      li{
+        display: block;
+        margin-top: 1em;
+        padding:10px 15px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px){
+  #responsive-nav{
+    ul{
+      top:95px;
+    }
+  }  
+}
 @media print,
        (min-resolution: 1.25dppx),
        (min-resolution: 120dpi) {
